@@ -455,7 +455,6 @@ h1 {
 
 .aboutSection,
 .stackSection,
-.education,
 .contactSection {
   display: grid;
   grid-template-columns: minmax(260px, 0.54fr) minmax(0, 1fr);
@@ -595,174 +594,36 @@ h1 {
 .projectVisual {
   position: relative;
   overflow: hidden;
-  height: 152px;
+  height: 172px;
   margin-bottom: 24px;
   border: 1px solid rgba(19, 58, 89, 0.12);
   border-radius: 8px;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-    #123b58;
-  background-size: 28px 28px, 28px 28px, auto;
+  background: #123b58;
 }
 
-.projectVisual::before,
 .projectVisual::after,
-.noteVisual::before,
 .noteVisual::after {
   position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(16, 32, 51, 0.02), rgba(16, 32, 51, 0.18)),
+    linear-gradient(90deg, rgba(26, 166, 166, 0.2), transparent 44%);
   content: "";
   pointer-events: none;
 }
 
-.projectVisual::before {
-  inset: 0;
-  background: linear-gradient(110deg, transparent 18%, rgba(125, 240, 180, 0.14), transparent 58%);
-  animation: scanGlow 4.8s ease-in-out infinite;
-}
-
-.projectVisual::after {
-  inset: auto 18px 18px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--teal), var(--amber));
-  opacity: 0.9;
-  animation: driftLine 3.8s ease-in-out infinite alternate;
-}
-
-.projectVisual span {
-  position: absolute;
+.projectVisual img,
+.noteVisual img {
+  width: 100%;
+  height: 100%;
   display: block;
-  border: 0;
-  border-radius: 999px;
-  background: #7df0b4;
-  box-shadow: 0 0 0 9px rgba(125, 240, 180, 0.1);
-  animation: floatNode 4.5s ease-in-out infinite;
+  object-fit: cover;
+  transition: transform 360ms ease;
 }
 
-.trading span:nth-child(1) {
-  width: 52%;
-  height: 10px;
-  left: 22px;
-  top: 40px;
-  background: linear-gradient(90deg, #7df0b4, var(--amber));
-}
-
-.trading span:nth-child(1)::after {
-  content: none;
-}
-
-.trading span:nth-child(2) {
-  width: 72%;
-  height: 10px;
-  left: 22px;
-  top: 76px;
-  background: linear-gradient(90deg, var(--teal), #7df0b4);
-  animation-delay: 400ms;
-}
-
-.trading span:nth-child(2)::after {
-  content: none;
-}
-
-.trading span:nth-child(3) {
-  width: 42%;
-  height: 10px;
-  left: 22px;
-  top: 112px;
-  background: linear-gradient(90deg, var(--blue), var(--teal));
-  animation-delay: 800ms;
-}
-
-.trading span:nth-child(3)::after {
-  content: none;
-}
-
-.weather span:nth-child(1) {
-  width: 66px;
-  height: 66px;
-  left: 28px;
-  top: 38px;
-  border-radius: 999px;
-}
-
-.weather span:nth-child(1)::after {
-  content: none;
-}
-
-.weather span:nth-child(2) {
-  width: 78px;
-  height: 78px;
-  left: 42%;
-  top: 28px;
-  border-radius: 999px;
-  background: rgba(221, 164, 75, 0.9);
-  box-shadow: 0 0 0 12px rgba(221, 164, 75, 0.12);
-  animation-delay: 400ms;
-}
-
-.weather span:nth-child(2)::after {
-  content: none;
-}
-
-.weather span:nth-child(3) {
-  width: 58px;
-  height: 58px;
-  right: 32px;
-  bottom: 32px;
-  border-radius: 999px;
-  animation-delay: 800ms;
-}
-
-.weather span:nth-child(3)::after {
-  content: none;
-}
-
-.schema span:nth-child(1) {
-  width: 88px;
-  height: 46px;
-  left: 22px;
-  top: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: none;
-}
-
-.schema span:nth-child(1)::after {
-  content: none;
-}
-
-.schema span:nth-child(2) {
-  width: 104px;
-  height: 46px;
-  right: 28px;
-  top: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: none;
-  animation-delay: 400ms;
-}
-
-.schema span:nth-child(2)::after {
-  content: none;
-}
-
-.schema span:nth-child(3) {
-  width: 106px;
-  height: 48px;
-  left: 35%;
-  bottom: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: none;
-  animation-delay: 800ms;
-}
-
-.schema span:nth-child(3)::after {
-  content: none;
+.project:hover .projectVisual img,
+.noteCard:hover .noteVisual img {
+  transform: scale(1.055);
 }
 
 .projectVisual span::after {
@@ -839,94 +700,11 @@ h1 {
 .noteVisual {
   position: relative;
   overflow: hidden;
-  height: 128px;
+  height: 156px;
   margin-bottom: 22px;
   border: 1px solid rgba(19, 58, 89, 0.12);
   border-radius: 8px;
-  background:
-    radial-gradient(circle at 24% 26%, rgba(125, 240, 180, 0.24), transparent 28%),
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    #123b58;
-  background-size: auto, 26px 26px, 26px 26px, auto;
-}
-
-.noteVisual::before {
-  inset: 22px;
-  border: 2px solid rgba(125, 240, 180, 0.28);
-  border-radius: 8px;
-}
-
-.noteVisual::after {
-  left: 18px;
-  right: 18px;
-  top: 50%;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--teal), var(--amber), #7df0b4);
-  animation: driftLine 3.2s ease-in-out infinite alternate;
-}
-
-.noteVisual span {
-  position: absolute;
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  background: #7df0b4;
-  box-shadow: 0 0 0 8px rgba(125, 240, 180, 0.12);
-  animation: floatNode 3.8s ease-in-out infinite;
-}
-
-.dag span:nth-child(1) {
-  left: 26px;
-  top: 28px;
-}
-
-.dag span:nth-child(2) {
-  left: 47%;
-  top: 56px;
-  animation-delay: 350ms;
-}
-
-.dag span:nth-child(3) {
-  right: 28px;
-  bottom: 28px;
-  animation-delay: 700ms;
-}
-
-.warehouse span:nth-child(1) {
-  left: 34px;
-  bottom: 26px;
-}
-
-.warehouse span:nth-child(2) {
-  left: 47%;
-  top: 28px;
-  animation-delay: 300ms;
-}
-
-.warehouse span:nth-child(3) {
-  right: 30px;
-  top: 58px;
-  animation-delay: 650ms;
-}
-
-.model span:nth-child(1) {
-  left: 30px;
-  top: 30px;
-}
-
-.model span:nth-child(2) {
-  left: 46%;
-  bottom: 28px;
-  animation-delay: 300ms;
-}
-
-.model span:nth-child(3) {
-  right: 30px;
-  top: 32px;
-  animation-delay: 650ms;
+  background: #123b58;
 }
 
 .noteCard > span {
@@ -967,20 +745,35 @@ h1 {
   text-align: center;
 }
 
+.education {
+  display: block;
+}
+
+.educationIntro {
+  max-width: 720px;
+  margin-bottom: 26px;
+}
+
+.educationIntro p {
+  max-width: 560px;
+  margin: 12px 0 0;
+}
+
 .educationDetails {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
 .educationCard {
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
+  grid-template-columns: 68px minmax(0, 1fr);
   gap: 18px;
-  align-items: center;
+  align-items: start;
   border-left: 4px solid var(--teal);
   border-radius: 8px;
   background: var(--surface);
-  padding: 18px;
+  padding: 22px;
   box-shadow: 0 14px 38px rgba(16, 32, 51, 0.055);
 }
 
@@ -1147,7 +940,8 @@ h1 {
 
   .metricBand,
   .projectGrid,
-  .notesGrid {
+  .notesGrid,
+  .educationDetails {
     grid-template-columns: 1fr;
   }
 
@@ -1222,6 +1016,15 @@ h1 {
   .projectActions {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .educationCard {
+    grid-template-columns: 1fr;
+  }
+
+  .schoolMark {
+    width: 58px;
+    height: 58px;
   }
 
   .footer,

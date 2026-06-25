@@ -63,7 +63,8 @@ const projects = [
       "A role-aware trading application with trade execution logic, portfolio tracking, SQLAlchemy persistence, and environment-based deployment configuration.",
     href: "https://github.com/Amir-Mirkazemi/ift401group4",
     linkLabel: "View repository",
-    visual: "trading",
+    image: "/portfolio-images/project-trading.jpg",
+    imageAlt: "Market chart visualization for the stock trading web application",
   },
   {
     title: "Weather ETL Pipeline",
@@ -72,7 +73,8 @@ const projects = [
       "A lightweight data engineering pipeline that extracts live weather data, transforms it, and loads structured records into SQLite on an automated schedule.",
     href: "https://github.com/Amir-Mirkazemi/weather-ETL-pipeline",
     linkLabel: "View repository",
-    visual: "weather",
+    image: "/portfolio-images/project-weather.jpg",
+    imageAlt: "Cloud system visual for the weather ETL pipeline",
   },
   {
     title: "IT Systems Development Project",
@@ -81,7 +83,8 @@ const projects = [
       "A scalable relational schema designed for structured storage, efficient retrieval, and dependable reporting queries.",
     href: "https://github.com/Amir-Mirkazemi",
     linkLabel: "View GitHub",
-    visual: "schema",
+    image: "/portfolio-images/project-schema.jpg",
+    imageAlt: "Circuit-board system visual for the IT database design project",
   },
 ];
 
@@ -91,21 +94,24 @@ const notes = [
     detail:
       "Patterns I care about when building scheduled workflows: idempotent tasks, clear dependencies, and readable failure points.",
     href: "https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html",
-    visual: "dag",
+    image: "/portfolio-images/ref-airflow.jpg",
+    imageAlt: "Server rack infrastructure for Airflow workflow reliability",
   },
   {
     title: "Snowflake pipelines",
     detail:
       "Streams, tasks, audit tables, and warehouse design are the pieces I use to think about dependable ingestion.",
     href: "https://docs.snowflake.com/en/user-guide/data-pipelines-intro",
-    visual: "warehouse",
+    image: "/portfolio-images/ref-snowflake.jpg",
+    imageAlt: "Global network lights for Snowflake data pipeline concepts",
   },
   {
     title: "Analytics engineering",
     detail:
       "I like the practical bridge between raw operational data, tested transformations, and reporting-ready datasets.",
     href: "https://docs.getdbt.com/docs/introduction",
-    visual: "model",
+    image: "/portfolio-images/ref-analytics.jpg",
+    imageAlt: "Analytics dashboard screen for reporting-ready datasets",
   },
 ];
 
@@ -259,10 +265,8 @@ export default function Home() {
         <div className="projectGrid">
           {projects.map((project) => (
             <article className="project" key={project.title}>
-              <div className={`projectVisual ${project.visual}`} aria-hidden="true">
-                <span />
-                <span />
-                <span />
+              <div className="projectVisual">
+                <img src={project.image} alt={project.imageAlt} />
               </div>
               <p>{project.meta}</p>
               <h3>{project.title}</h3>
@@ -287,10 +291,8 @@ export default function Home() {
         <div className="notesGrid">
           {notes.map((note) => (
             <a className="noteCard" href={note.href} key={note.title} rel="noreferrer" target="_blank">
-              <div className={`noteVisual ${note.visual}`} aria-hidden="true">
-                <span />
-                <span />
-                <span />
+              <div className="noteVisual">
+                <img src={note.image} alt={note.imageAlt} />
               </div>
               <span>Read</span>
               <h3>{note.title}</h3>
@@ -312,8 +314,9 @@ export default function Home() {
       </section>
 
       <section className="section education">
-        <div>
+        <div className="educationIntro">
           <h2>Education</h2>
+          <p>Formal data science training backed by information technology and production data work.</p>
         </div>
         <div className="educationDetails">
           <article className="educationCard">
