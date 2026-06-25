@@ -392,7 +392,7 @@ h1 {
 .aboutCard,
 .timelineItem,
 .project,
-.educationDetails p,
+.educationCard,
 .contactForm,
 .footer {
   border: 1px solid var(--line);
@@ -549,9 +549,17 @@ h1 {
 }
 
 .company {
-  margin-bottom: 0;
+  margin-bottom: 8px;
   color: var(--ink) !important;
   font-weight: 750;
+}
+
+.location {
+  margin: 0;
+  color: var(--blue) !important;
+  font-size: 0.88rem !important;
+  font-weight: 800;
+  line-height: 1.35 !important;
 }
 
 .stack {
@@ -625,120 +633,136 @@ h1 {
 .projectVisual span {
   position: absolute;
   display: block;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 850;
-  text-transform: uppercase;
+  border: 0;
+  border-radius: 999px;
+  background: #7df0b4;
+  box-shadow: 0 0 0 9px rgba(125, 240, 180, 0.1);
   animation: floatNode 4.5s ease-in-out infinite;
 }
 
 .trading span:nth-child(1) {
-  width: 86px;
-  height: 52px;
-  left: 20px;
-  top: 20px;
+  width: 52%;
+  height: 10px;
+  left: 22px;
+  top: 40px;
+  background: linear-gradient(90deg, #7df0b4, var(--amber));
 }
 
 .trading span:nth-child(1)::after {
-  content: "Orders";
+  content: none;
 }
 
 .trading span:nth-child(2) {
-  width: 112px;
-  height: 58px;
-  right: 24px;
-  top: 34px;
+  width: 72%;
+  height: 10px;
+  left: 22px;
+  top: 76px;
+  background: linear-gradient(90deg, var(--teal), #7df0b4);
   animation-delay: 400ms;
 }
 
 .trading span:nth-child(2)::after {
-  content: "Portfolio";
+  content: none;
 }
 
 .trading span:nth-child(3) {
-  width: 82px;
-  height: 42px;
-  left: 42%;
-  bottom: 28px;
+  width: 42%;
+  height: 10px;
+  left: 22px;
+  top: 112px;
+  background: linear-gradient(90deg, var(--blue), var(--teal));
   animation-delay: 800ms;
 }
 
 .trading span:nth-child(3)::after {
-  content: "Trades";
+  content: none;
 }
 
 .weather span:nth-child(1) {
-  width: 76px;
-  height: 76px;
+  width: 66px;
+  height: 66px;
   left: 28px;
-  top: 28px;
+  top: 38px;
   border-radius: 999px;
 }
 
 .weather span:nth-child(1)::after {
-  content: "API";
+  content: none;
 }
 
 .weather span:nth-child(2) {
-  width: 110px;
-  height: 50px;
-  left: 41%;
-  top: 52px;
+  width: 78px;
+  height: 78px;
+  left: 42%;
+  top: 28px;
+  border-radius: 999px;
+  background: rgba(221, 164, 75, 0.9);
+  box-shadow: 0 0 0 12px rgba(221, 164, 75, 0.12);
   animation-delay: 400ms;
 }
 
 .weather span:nth-child(2)::after {
-  content: "Transform";
+  content: none;
 }
 
 .weather span:nth-child(3) {
-  width: 92px;
-  height: 56px;
-  right: 24px;
-  bottom: 24px;
+  width: 58px;
+  height: 58px;
+  right: 32px;
+  bottom: 32px;
+  border-radius: 999px;
   animation-delay: 800ms;
 }
 
 .weather span:nth-child(3)::after {
-  content: "SQLite";
+  content: none;
 }
 
 .schema span:nth-child(1) {
-  width: 90px;
-  height: 54px;
+  width: 88px;
+  height: 46px;
   left: 22px;
   top: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: none;
 }
 
 .schema span:nth-child(1)::after {
-  content: "Users";
+  content: none;
 }
 
 .schema span:nth-child(2) {
-  width: 106px;
-  height: 54px;
+  width: 104px;
+  height: 46px;
   right: 28px;
   top: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: none;
   animation-delay: 400ms;
 }
 
 .schema span:nth-child(2)::after {
-  content: "Reports";
+  content: none;
 }
 
 .schema span:nth-child(3) {
-  width: 104px;
-  height: 54px;
-  left: 34%;
+  width: 106px;
+  height: 48px;
+  left: 35%;
   bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: none;
   animation-delay: 800ms;
 }
 
 .schema span:nth-child(3)::after {
-  content: "Facts";
+  content: none;
 }
 
 .projectVisual span::after {
@@ -948,10 +972,54 @@ h1 {
   gap: 14px;
 }
 
-.educationDetails p {
-  margin: 0;
+.educationCard {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
   border-left: 4px solid var(--teal);
+  border-radius: 8px;
+  background: var(--surface);
   padding: 18px;
+  box-shadow: 0 14px 38px rgba(16, 32, 51, 0.055);
+}
+
+.schoolMark {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.asuMark {
+  background: #8c1d40;
+}
+
+.educationCard h3 {
+  margin: 0 0 5px;
+  font-size: 1.12rem;
+  line-height: 1.2;
+}
+
+.educationCard p {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 780;
+  line-height: 1.45;
+}
+
+.educationCard span {
+  display: block;
+  color: #2f4357;
+  font-size: 0.98rem;
+  font-weight: 650;
+  line-height: 1.5;
 }
 
 .contactSection {

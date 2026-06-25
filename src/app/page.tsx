@@ -29,6 +29,7 @@ const experience = [
   {
     role: "Data Engineer",
     company: "Credit One Bank",
+    location: "Las Vegas, NV",
     period: "July 2025 - Present",
     stack: "SQL, Snowflake, Python, Airflow, Oracle, DBeaver",
     summary:
@@ -37,6 +38,7 @@ const experience = [
   {
     role: "Data Analyst",
     company: "Advertising Checking Bureau",
+    location: "Remote",
     period: "Sep 2023 - May 2025",
     stack: "SQL, Excel",
     summary:
@@ -45,6 +47,7 @@ const experience = [
   {
     role: "End User Analyst Intern",
     company: "Freeport-McMoRan",
+    location: "Phoenix, AZ",
     period: "May 2025 - July 2025",
     stack: "ServiceNow, Active Directory, hardware imaging",
     summary:
@@ -238,6 +241,7 @@ export default function Home() {
                 <p className="period">{job.period}</p>
                 <h3>{job.role}</h3>
                 <p className="company">{job.company}</p>
+                <p className="location">{job.location}</p>
               </div>
               <div>
                 <p className="stack">{job.stack}</p>
@@ -278,7 +282,7 @@ export default function Home() {
 
       <section className="section notesSection" id="notes">
         <div className="sectionHeader">
-          <h2>Data engineering notes</h2>
+          <h2>Engineering references</h2>
         </div>
         <div className="notesGrid">
           {notes.map((note) => (
@@ -312,11 +316,22 @@ export default function Home() {
           <h2>Education</h2>
         </div>
         <div className="educationDetails">
-          <p>
-            University of California, San Diego / Master of Science in Data Science / Expected Apr
-            2027 / Current GPA 4.0 / Halicioglu Data Science Scholarship
-          </p>
-          <p>Arizona State University / BS Information Technology / GPA 4.0 / Completed Aug 2025</p>
+          <article className="educationCard">
+            <div className="schoolMark">UCSD</div>
+            <div>
+              <h3>University of California, San Diego</h3>
+              <p>Master of Science in Data Science</p>
+              <span>Expected Apr 2027 / Current GPA 4.0 / Halicioglu Data Science Scholarship</span>
+            </div>
+          </article>
+          <article className="educationCard">
+            <div className="schoolMark asuMark">ASU</div>
+            <div>
+              <h3>Arizona State University</h3>
+              <p>BS Information Technology</p>
+              <span>Completed Aug 2025 / GPA 4.0</span>
+            </div>
+          </article>
         </div>
       </section>
 
