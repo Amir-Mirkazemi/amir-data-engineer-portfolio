@@ -16,9 +16,13 @@ const systems = [
 ];
 
 const aboutCards = [
-  { label: "Email", value: "amirkazemi@ucsd.edu" },
-  { label: "Phone", value: "480-334-6609" },
-  { label: "Location", value: "Las Vegas, NV" },
+  { label: "Email", value: "amirkazemi@ucsd.edu", href: "mailto:amirkazemi@ucsd.edu" },
+  {
+    label: "LinkedIn",
+    value: "amir-mirkazemi",
+    href: "https://www.linkedin.com/in/amir-mirkazemi/",
+  },
+  { label: "GitHub", value: "amir-mirkazemi", href: "https://github.com/amir-mirkazemi" },
 ];
 
 const experience = [
@@ -177,10 +181,10 @@ export default function Home() {
           </p>
           <div className="aboutCards" aria-label="Amir contact details">
             {aboutCards.map((item) => (
-              <div className="aboutCard" key={item.label}>
+              <a className="aboutCard" href={item.href} key={item.label} rel="noreferrer" target="_blank">
                 <span>{item.label}</span>
                 <strong>{item.value}</strong>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -254,8 +258,13 @@ export default function Home() {
             UCSD address with your details.
           </p>
           <div className="contactLinks" aria-label="Amir contact information">
-            <span>amirkazemi@ucsd.edu</span>
-            <span>480-334-6609</span>
+            <a href="mailto:amirkazemi@ucsd.edu">amirkazemi@ucsd.edu</a>
+            <a href="https://www.linkedin.com/in/amir-mirkazemi/" rel="noreferrer" target="_blank">
+              LinkedIn
+            </a>
+            <a href="https://github.com/amir-mirkazemi" rel="noreferrer" target="_blank">
+              GitHub
+            </a>
           </div>
         </div>
         <ContactForm />
@@ -264,8 +273,13 @@ export default function Home() {
       <footer className="footer">
         <p>Las Vegas, NV</p>
         <div>
-          <span>amirkazemi@ucsd.edu</span>
-          <span>480-334-6609</span>
+          <a href="mailto:amirkazemi@ucsd.edu">amirkazemi@ucsd.edu</a>
+          <a href="https://www.linkedin.com/in/amir-mirkazemi/" rel="noreferrer" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://github.com/amir-mirkazemi" rel="noreferrer" target="_blank">
+            GitHub
+          </a>
         </div>
       </footer>
     </main>

@@ -3,7 +3,7 @@
   --surface: #ffffff;
   --surface-soft: #eaf3f5;
   --ink: #102033;
-  --muted: #667687;
+  --muted: #4d6073;
   --line: #dce6ed;
   --navy: #133a59;
   --blue: #2472a3;
@@ -551,7 +551,7 @@ h1 {
   margin-top: 24px;
 }
 
-.contactLinks span {
+.contactLinks a {
   display: inline-flex;
   min-height: 42px;
   align-items: center;
@@ -637,7 +637,7 @@ h1 {
   justify-content: flex-end;
 }
 
-.footer span {
+.footer a {
   color: var(--navy);
   font-weight: 850;
 }
