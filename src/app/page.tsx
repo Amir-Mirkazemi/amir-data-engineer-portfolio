@@ -97,12 +97,14 @@ export default function Home() {
 
       <section className="hero">
         <div className="heroCopy">
-          <p className="eyebrow">Data Engineer / Snowflake / Airflow / SQL</p>
+          <p className="eyebrow">Data Engineer Portfolio</p>
           <h1>Amir Mirkazemi</h1>
-          <p className="lede">
-            I build data pipelines, validation workflows, and reporting-ready datasets for teams
-            that need dependable business data.
-          </p>
+          <div className="heroRole" aria-label="Data engineering focus areas">
+            <span>Snowflake</span>
+            <span>Airflow</span>
+            <span>SQL validation</span>
+            <span>Reporting datasets</span>
+          </div>
           <div className="heroActions" aria-label="Contact links">
             <a className="primaryAction" href="#contact">
               Contact me
@@ -113,36 +115,36 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="consolePanel" aria-label="Pipeline reliability console">
-          <div className="consoleTop">
+        <aside className="dashboardPanel" aria-label="Data engineering dashboard">
+          <div className="dashboardTop">
             <div>
               <span className="statusDot" />
-              Pipeline reliability console
+              Data engineering workspace
             </div>
-            <strong>Live</strong>
+            <strong>Production-ready</strong>
           </div>
-          <div className="flowMap" aria-hidden="true">
-            <span className="node source">Oracle</span>
-            <span className="node orchestrate">Airflow</span>
-            <span className="node warehouse">Snowflake</span>
-            <span className="node report">BI</span>
-            <span className="route routeOne" />
-            <span className="route routeTwo" />
-            <span className="route routeThree" />
+          <div className="dashboardGrid">
+            <div className="dashboardCard featuredCard">
+              <span>Warehouse</span>
+              <strong>Snowflake ingestion</strong>
+              <p>Validated feeds, audit tables, and reporting-ready schemas.</p>
+            </div>
+            <div className="dashboardCard">
+              <span>Orchestration</span>
+              <strong>Airflow DAGs</strong>
+              <p>Scheduled workflows with clear handoffs and release checks.</p>
+            </div>
+            <div className="dashboardCard">
+              <span>Quality</span>
+              <strong>SQL validation</strong>
+              <p>Row counts, schema rules, and exception checks before BI.</p>
+            </div>
           </div>
-          <div className="consoleRows">
-            <div>
-              <span>ingestion_credit_feed</span>
-              <strong>validated</strong>
-            </div>
-            <div>
-              <span>oracle_to_snowflake</span>
-              <strong>scheduled</strong>
-            </div>
-            <div>
-              <span>audit_row_counts</span>
-              <strong>complete</strong>
-            </div>
+          <div className="queryPreview" aria-label="SQL validation preview">
+            <span>validation_check.sql</span>
+            <code>
+              select feed_name, row_count, status from audit_runs where status = 'ready';
+            </code>
           </div>
         </aside>
       </section>
@@ -164,7 +166,6 @@ export default function Home() {
 
       <section className="section aboutSection" id="about">
         <div className="sectionHeader compactHeader">
-          <p className="sectionKicker">Background</p>
           <h2>About Amir</h2>
         </div>
         <div className="aboutBody">
@@ -187,7 +188,6 @@ export default function Home() {
 
       <section className="section experience" id="work">
         <div className="sectionHeader">
-          <p className="sectionKicker">Work</p>
           <h2>Experience</h2>
         </div>
         <div className="timeline">
@@ -209,7 +209,6 @@ export default function Home() {
 
       <section className="section projects" id="projects">
         <div className="sectionHeader">
-          <p className="sectionKicker">Builds</p>
           <h2>Projects</h2>
         </div>
         <div className="projectGrid">
@@ -225,7 +224,6 @@ export default function Home() {
 
       <section className="section stackSection" id="stack">
         <div>
-          <p className="sectionKicker">Tools</p>
           <h2>Technical stack</h2>
         </div>
         <div className="skillGrid">
@@ -237,7 +235,6 @@ export default function Home() {
 
       <section className="section education">
         <div>
-          <p className="sectionKicker">School</p>
           <h2>Education</h2>
         </div>
         <div className="educationDetails">
@@ -251,7 +248,6 @@ export default function Home() {
 
       <section className="section contactSection" id="contact">
         <div className="contactIntro">
-          <p className="sectionKicker">Contact</p>
           <h2>Contact me</h2>
           <p>
             Share your name, email, phone number, and message. The form prepares an email to my

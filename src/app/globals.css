@@ -147,18 +147,31 @@ h3 {
 }
 
 h1 {
-  margin: 16px 0 20px;
+  margin: 16px 0 22px;
   font-size: clamp(3.6rem, 6.2vw, 6rem);
   font-weight: 880;
   line-height: 0.98;
 }
 
-.lede {
-  max-width: 650px;
-  margin-bottom: 28px;
-  color: #394b5e;
-  font-size: clamp(1.1rem, 1.5vw, 1.34rem);
-  line-height: 1.55;
+.heroRole {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 620px;
+  margin-bottom: 30px;
+}
+
+.heroRole span {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 0 13px;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 820;
 }
 
 .heroActions,
@@ -198,7 +211,7 @@ h1 {
   color: #fff;
 }
 
-.consolePanel {
+.dashboardPanel {
   overflow: hidden;
   border: 1px solid rgba(19, 58, 89, 0.18);
   border-radius: 8px;
@@ -207,7 +220,7 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.consoleTop {
+.dashboardTop {
   display: flex;
   min-height: 58px;
   align-items: center;
@@ -220,13 +233,13 @@ h1 {
   font-weight: 800;
 }
 
-.consoleTop div {
+.dashboardTop div {
   display: inline-flex;
   align-items: center;
   gap: 10px;
 }
 
-.consoleTop strong {
+.dashboardTop strong {
   color: #7df0b4;
   text-transform: uppercase;
 }
@@ -239,101 +252,70 @@ h1 {
   box-shadow: 0 0 0 5px rgba(67, 163, 111, 0.16);
 }
 
-.flowMap {
-  position: relative;
-  min-height: 314px;
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 18px;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.048) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.048) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(26, 166, 166, 0.18), transparent 54%);
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(26, 166, 166, 0.18), transparent 60%);
   background-size: 34px 34px, 34px 34px, auto;
 }
 
-.node {
-  position: absolute;
-  z-index: 2;
-  display: inline-flex;
-  min-height: 38px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+.dashboardCard {
+  min-height: 128px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  font-size: 0.84rem;
-  font-weight: 850;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 16px;
 }
 
-.source {
-  left: 24px;
-  top: 44px;
+.featuredCard {
+  grid-row: span 2;
 }
 
-.orchestrate {
-  left: 42%;
-  top: 132px;
-  transform: translateX(-50%);
-}
-
-.warehouse {
-  right: 28px;
-  top: 72px;
-}
-
-.report {
-  right: 64px;
-  bottom: 50px;
-}
-
-.route {
-  position: absolute;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--teal), var(--amber));
-  transform-origin: left center;
-}
-
-.routeOne {
-  left: 100px;
-  top: 82px;
-  width: 240px;
-  transform: rotate(15deg);
-}
-
-.routeTwo {
-  left: 205px;
-  top: 164px;
-  width: 260px;
-  transform: rotate(-19deg);
-}
-
-.routeThree {
-  right: 96px;
-  bottom: 92px;
-  width: 190px;
-  transform: rotate(35deg);
-}
-
-.consoleRows {
-  display: grid;
-}
-
-.consoleRows div {
-  display: flex;
-  min-height: 58px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 0 18px;
-  color: rgba(234, 247, 248, 0.74);
-  font-size: 0.86rem;
-}
-
-.consoleRows strong {
+.dashboardCard span,
+.queryPreview span {
+  display: block;
+  margin-bottom: 10px;
   color: #7df0b4;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
+  font-weight: 850;
   text-transform: uppercase;
+}
+
+.dashboardCard strong {
+  display: block;
+  color: #fff;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.08;
+}
+
+.dashboardCard p {
+  margin: 12px 0 0;
+  color: rgba(234, 247, 248, 0.74);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.queryPreview {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px;
+}
+
+.queryPreview code {
+  display: block;
+  overflow-wrap: anywhere;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.18);
+  padding: 14px;
+  color: rgba(234, 247, 248, 0.86);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
 .metricBand {
@@ -410,10 +392,8 @@ h1 {
 }
 
 .sectionHeader {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr);
-  gap: clamp(24px, 5vw, 72px);
-  margin-bottom: 26px;
+  display: block;
+  margin-bottom: 24px;
 }
 
 .compactHeader {
@@ -423,7 +403,7 @@ h1 {
 
 .section h2 {
   max-width: 740px;
-  margin: 8px 0 0;
+  margin: 0;
   font-size: clamp(1.9rem, 2.45vw, 2.65rem);
   font-weight: 850;
   line-height: 1.1;
@@ -721,6 +701,7 @@ h1 {
   }
 
   .heroActions,
+  .heroRole,
   .contactLinks,
   .aboutCards {
     display: grid;
@@ -732,14 +713,17 @@ h1 {
     width: 100%;
   }
 
-  .flowMap {
-    min-height: 260px;
-  }
-
-  .consoleRows div,
   .metric {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredCard {
+    grid-row: auto;
   }
 
   .skillGrid {
