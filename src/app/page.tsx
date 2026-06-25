@@ -60,6 +60,7 @@ const projects = [
       "A role-aware trading application with trade execution logic, portfolio tracking, SQLAlchemy persistence, and environment-based deployment configuration.",
     href: "https://github.com/Amir-Mirkazemi/ift401group4",
     linkLabel: "View repository",
+    visual: "trading",
   },
   {
     title: "Weather ETL Pipeline",
@@ -68,6 +69,7 @@ const projects = [
       "A lightweight data engineering pipeline that extracts live weather data, transforms it, and loads structured records into SQLite on an automated schedule.",
     href: "https://github.com/Amir-Mirkazemi/weather-ETL-pipeline",
     linkLabel: "View repository",
+    visual: "weather",
   },
   {
     title: "IT Systems Development Project",
@@ -76,6 +78,7 @@ const projects = [
       "A scalable relational schema designed for structured storage, efficient retrieval, and dependable reporting queries.",
     href: "https://github.com/Amir-Mirkazemi",
     linkLabel: "View GitHub",
+    visual: "schema",
   },
 ];
 
@@ -85,18 +88,21 @@ const notes = [
     detail:
       "Patterns I care about when building scheduled workflows: idempotent tasks, clear dependencies, and readable failure points.",
     href: "https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html",
+    visual: "dag",
   },
   {
     title: "Snowflake pipelines",
     detail:
       "Streams, tasks, audit tables, and warehouse design are the pieces I use to think about dependable ingestion.",
     href: "https://docs.snowflake.com/en/user-guide/data-pipelines-intro",
+    visual: "warehouse",
   },
   {
     title: "Analytics engineering",
     detail:
       "I like the practical bridge between raw operational data, tested transformations, and reporting-ready datasets.",
     href: "https://docs.getdbt.com/docs/introduction",
+    visual: "model",
   },
 ];
 
@@ -137,12 +143,6 @@ export default function Home() {
         <div className="heroCopy">
           <p className="eyebrow">Data Engineer Portfolio</p>
           <h1>Amir Mirkazemi</h1>
-          <div className="heroRole" aria-label="Data engineering focus areas">
-            <span>Snowflake</span>
-            <span>Airflow</span>
-            <span>SQL validation</span>
-            <span>Reporting datasets</span>
-          </div>
           <div className="heroActions" aria-label="Contact links">
             <a className="primaryAction" href="#contact">
               Contact me
@@ -255,6 +255,11 @@ export default function Home() {
         <div className="projectGrid">
           {projects.map((project) => (
             <article className="project" key={project.title}>
+              <div className={`projectVisual ${project.visual}`} aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
               <p>{project.meta}</p>
               <h3>{project.title}</h3>
               <span>{project.detail}</span>
@@ -278,6 +283,11 @@ export default function Home() {
         <div className="notesGrid">
           {notes.map((note) => (
             <a className="noteCard" href={note.href} key={note.title} rel="noreferrer" target="_blank">
+              <div className={`noteVisual ${note.visual}`} aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
               <span>Read</span>
               <h3>{note.title}</h3>
               <p>{note.detail}</p>

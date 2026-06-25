@@ -57,6 +57,34 @@ a {
   }
 }
 
+@keyframes driftLine {
+  from {
+    transform: translateX(-22%);
+  }
+  to {
+    transform: translateX(22%);
+  }
+}
+
+@keyframes floatNode {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes scanGlow {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
 main {
   min-height: 100vh;
   overflow: hidden;
@@ -171,31 +199,10 @@ h3 {
 }
 
 h1 {
-  margin: 16px 0 22px;
+  margin: 16px 0 30px;
   font-size: clamp(3.6rem, 6.2vw, 6rem);
   font-weight: 880;
   line-height: 0.98;
-}
-
-.heroRole {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 620px;
-  margin-bottom: 30px;
-}
-
-.heroRole span {
-  display: inline-flex;
-  min-height: 40px;
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
-  padding: 0 13px;
-  color: var(--navy);
-  font-size: 0.9rem;
-  font-weight: 820;
 }
 
 .heroActions,
@@ -561,7 +568,7 @@ h1 {
 .project {
   display: flex;
   flex-direction: column;
-  min-height: 230px;
+  min-height: 420px;
   padding: clamp(22px, 4vw, 34px);
   transition:
     transform 180ms ease,
@@ -575,6 +582,171 @@ h1 {
   border-color: rgba(26, 166, 166, 0.35);
   box-shadow: 0 20px 46px rgba(16, 32, 51, 0.1);
   transform: translateY(-4px);
+}
+
+.projectVisual {
+  position: relative;
+  overflow: hidden;
+  height: 152px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(19, 58, 89, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    #123b58;
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+.projectVisual::before,
+.projectVisual::after,
+.noteVisual::before,
+.noteVisual::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.projectVisual::before {
+  inset: 0;
+  background: linear-gradient(110deg, transparent 18%, rgba(125, 240, 180, 0.14), transparent 58%);
+  animation: scanGlow 4.8s ease-in-out infinite;
+}
+
+.projectVisual::after {
+  inset: auto 18px 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--amber));
+  opacity: 0.9;
+  animation: driftLine 3.8s ease-in-out infinite alternate;
+}
+
+.projectVisual span {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  animation: floatNode 4.5s ease-in-out infinite;
+}
+
+.trading span:nth-child(1) {
+  width: 86px;
+  height: 52px;
+  left: 20px;
+  top: 20px;
+}
+
+.trading span:nth-child(1)::after {
+  content: "Orders";
+}
+
+.trading span:nth-child(2) {
+  width: 112px;
+  height: 58px;
+  right: 24px;
+  top: 34px;
+  animation-delay: 400ms;
+}
+
+.trading span:nth-child(2)::after {
+  content: "Portfolio";
+}
+
+.trading span:nth-child(3) {
+  width: 82px;
+  height: 42px;
+  left: 42%;
+  bottom: 28px;
+  animation-delay: 800ms;
+}
+
+.trading span:nth-child(3)::after {
+  content: "Trades";
+}
+
+.weather span:nth-child(1) {
+  width: 76px;
+  height: 76px;
+  left: 28px;
+  top: 28px;
+  border-radius: 999px;
+}
+
+.weather span:nth-child(1)::after {
+  content: "API";
+}
+
+.weather span:nth-child(2) {
+  width: 110px;
+  height: 50px;
+  left: 41%;
+  top: 52px;
+  animation-delay: 400ms;
+}
+
+.weather span:nth-child(2)::after {
+  content: "Transform";
+}
+
+.weather span:nth-child(3) {
+  width: 92px;
+  height: 56px;
+  right: 24px;
+  bottom: 24px;
+  animation-delay: 800ms;
+}
+
+.weather span:nth-child(3)::after {
+  content: "SQLite";
+}
+
+.schema span:nth-child(1) {
+  width: 90px;
+  height: 54px;
+  left: 22px;
+  top: 28px;
+}
+
+.schema span:nth-child(1)::after {
+  content: "Users";
+}
+
+.schema span:nth-child(2) {
+  width: 106px;
+  height: 54px;
+  right: 28px;
+  top: 30px;
+  animation-delay: 400ms;
+}
+
+.schema span:nth-child(2)::after {
+  content: "Reports";
+}
+
+.schema span:nth-child(3) {
+  width: 104px;
+  height: 54px;
+  left: 34%;
+  bottom: 22px;
+  animation-delay: 800ms;
+}
+
+.schema span:nth-child(3)::after {
+  content: "Facts";
+}
+
+.projectVisual span::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-shadow: 0 1px 12px rgba(16, 32, 51, 0.42);
 }
 
 .project p {
@@ -626,8 +798,9 @@ h1 {
 }
 
 .noteCard {
-  display: block;
-  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -639,7 +812,100 @@ h1 {
     border-color 180ms ease;
 }
 
-.noteCard span {
+.noteVisual {
+  position: relative;
+  overflow: hidden;
+  height: 128px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(19, 58, 89, 0.12);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 24% 26%, rgba(125, 240, 180, 0.24), transparent 28%),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    #123b58;
+  background-size: auto, 26px 26px, 26px 26px, auto;
+}
+
+.noteVisual::before {
+  inset: 22px;
+  border: 2px solid rgba(125, 240, 180, 0.28);
+  border-radius: 8px;
+}
+
+.noteVisual::after {
+  left: 18px;
+  right: 18px;
+  top: 50%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--amber), #7df0b4);
+  animation: driftLine 3.2s ease-in-out infinite alternate;
+}
+
+.noteVisual span {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #7df0b4;
+  box-shadow: 0 0 0 8px rgba(125, 240, 180, 0.12);
+  animation: floatNode 3.8s ease-in-out infinite;
+}
+
+.dag span:nth-child(1) {
+  left: 26px;
+  top: 28px;
+}
+
+.dag span:nth-child(2) {
+  left: 47%;
+  top: 56px;
+  animation-delay: 350ms;
+}
+
+.dag span:nth-child(3) {
+  right: 28px;
+  bottom: 28px;
+  animation-delay: 700ms;
+}
+
+.warehouse span:nth-child(1) {
+  left: 34px;
+  bottom: 26px;
+}
+
+.warehouse span:nth-child(2) {
+  left: 47%;
+  top: 28px;
+  animation-delay: 300ms;
+}
+
+.warehouse span:nth-child(3) {
+  right: 30px;
+  top: 58px;
+  animation-delay: 650ms;
+}
+
+.model span:nth-child(1) {
+  left: 30px;
+  top: 30px;
+}
+
+.model span:nth-child(2) {
+  left: 46%;
+  bottom: 28px;
+  animation-delay: 300ms;
+}
+
+.model span:nth-child(3) {
+  right: 30px;
+  top: 32px;
+  animation-delay: 650ms;
+}
+
+.noteCard > span {
   display: block;
   margin-bottom: 16px;
   color: var(--blue);
