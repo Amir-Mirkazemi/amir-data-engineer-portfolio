@@ -58,12 +58,45 @@ const projects = [
     meta: "MySQL, Flask, Python, AWS",
     detail:
       "A role-aware trading application with trade execution logic, portfolio tracking, SQLAlchemy persistence, and environment-based deployment configuration.",
+    href: "https://github.com/Amir-Mirkazemi/ift401group4",
+    linkLabel: "View repository",
+  },
+  {
+    title: "Weather ETL Pipeline",
+    meta: "Python, GitHub Actions, SQLite, API ingestion",
+    detail:
+      "A lightweight data engineering pipeline that extracts live weather data, transforms it, and loads structured records into SQLite on an automated schedule.",
+    href: "https://github.com/Amir-Mirkazemi/weather-ETL-pipeline",
+    linkLabel: "View repository",
   },
   {
     title: "IT Systems Development Project",
     meta: "SQL, database design, Lucidchart",
     detail:
       "A scalable relational schema designed for structured storage, efficient retrieval, and dependable reporting queries.",
+    href: "https://github.com/Amir-Mirkazemi",
+    linkLabel: "View GitHub",
+  },
+];
+
+const notes = [
+  {
+    title: "Airflow DAG best practices",
+    detail:
+      "Patterns I care about when building scheduled workflows: idempotent tasks, clear dependencies, and readable failure points.",
+    href: "https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html",
+  },
+  {
+    title: "Snowflake pipelines",
+    detail:
+      "Streams, tasks, audit tables, and warehouse design are the pieces I use to think about dependable ingestion.",
+    href: "https://docs.snowflake.com/en/user-guide/data-pipelines-intro",
+  },
+  {
+    title: "Analytics engineering",
+    detail:
+      "I like the practical bridge between raw operational data, tested transformations, and reporting-ready datasets.",
+    href: "https://docs.getdbt.com/docs/introduction",
   },
 ];
 
@@ -94,6 +127,7 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#projects">Projects</a>
+          <a href="#notes">Notes</a>
           <a href="#stack">Stack</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -115,6 +149,9 @@ export default function Home() {
             </a>
             <a className="secondaryAction" href="#work">
               View work
+            </a>
+            <a className="secondaryAction" href="/amir-mirkazemi-data-engineer-resume.pdf" target="_blank">
+              Resume
             </a>
           </div>
         </div>
@@ -221,7 +258,30 @@ export default function Home() {
               <p>{project.meta}</p>
               <h3>{project.title}</h3>
               <span>{project.detail}</span>
+              <div className="projectActions">
+                <a href={project.href} rel="noreferrer" target="_blank">
+                  {project.linkLabel}
+                </a>
+                <a href="https://www.linkedin.com/in/amir-mirkazemi/" rel="noreferrer" target="_blank">
+                  LinkedIn
+                </a>
+              </div>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section notesSection" id="notes">
+        <div className="sectionHeader">
+          <h2>Data engineering notes</h2>
+        </div>
+        <div className="notesGrid">
+          {notes.map((note) => (
+            <a className="noteCard" href={note.href} key={note.title} rel="noreferrer" target="_blank">
+              <span>Read</span>
+              <h3>{note.title}</h3>
+              <p>{note.detail}</p>
+            </a>
           ))}
         </div>
       </section>
@@ -254,8 +314,8 @@ export default function Home() {
         <div className="contactIntro">
           <h2>Contact me</h2>
           <p>
-            Share your name, email, phone number, and message. The form prepares an email to my
-            UCSD address with your details.
+            Share your name, email, and message. The form prepares an email to my UCSD address with
+            your details.
           </p>
           <div className="contactLinks" aria-label="Amir contact information">
             <a href="mailto:amirkazemi@ucsd.edu">amirkazemi@ucsd.edu</a>

@@ -11,7 +11,6 @@ export default function ContactForm() {
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") || "").trim();
     const email = String(form.get("email") || "").trim();
-    const phone = String(form.get("phone") || "").trim();
     const message = String(form.get("message") || "").trim();
 
     const subject = encodeURIComponent(`Portfolio contact from ${name || "website visitor"}`);
@@ -23,7 +22,6 @@ export default function ContactForm() {
         "",
         `Name: ${name}`,
         `Email: ${email}`,
-        `Phone: ${phone || "Not provided"}`,
         "",
         "Message:",
         message,
@@ -43,10 +41,6 @@ export default function ContactForm() {
       <label>
         Email
         <input name="email" type="email" autoComplete="email" required />
-      </label>
-      <label>
-        Phone
-        <input name="phone" type="tel" autoComplete="tel" />
       </label>
       <label>
         Message
