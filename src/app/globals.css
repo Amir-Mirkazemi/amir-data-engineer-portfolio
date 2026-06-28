@@ -163,7 +163,7 @@ nextjs-portal {
   width: min(1180px, calc(100% - 36px));
   min-height: auto;
   margin: 0 auto;
-  padding: clamp(84px, 12vh, 126px) 0 66px;
+  padding: clamp(44px, 7vh, 72px) 0 32px;
 }
 
 .heroCopy {
@@ -431,7 +431,7 @@ h1 {
   flex-wrap: wrap;
   gap: 8px;
   width: min(1180px, calc(100% - 36px));
-  margin: 0 auto 18px;
+  margin: 0 auto 4px;
 }
 
 .systemStrip span {
@@ -447,7 +447,7 @@ h1 {
 .section {
   width: min(1180px, calc(100% - 36px));
   margin: 0 auto;
-  padding: clamp(58px, 7vw, 92px) 0;
+  padding: clamp(26px, 3.5vw, 42px) 0;
   animation: fadeUp 620ms ease both;
 }
 
@@ -676,7 +676,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .noteCard {
@@ -748,7 +748,7 @@ h1 {
 
 .educationIntro {
   max-width: 720px;
-  margin-bottom: 26px;
+  margin-bottom: 18px;
 }
 
 .educationIntro p {
@@ -818,8 +818,8 @@ h1 {
   justify-content: flex-end;
   gap: 18px;
   width: min(1180px, calc(100% - 36px));
-  margin: 0 auto 32px;
-  padding: 24px;
+  margin: 0 auto 24px;
+  padding: 18px 24px;
   color: var(--muted);
 }
 
@@ -840,7 +840,7 @@ h1 {
   }
 
   .hero {
-    padding-top: 64px;
+    padding-top: 34px;
   }
 
   .metricBand,
@@ -881,7 +881,7 @@ h1 {
   }
 
   .hero {
-    padding-top: 40px;
+    padding-top: 24px;
   }
 
   h1 {
