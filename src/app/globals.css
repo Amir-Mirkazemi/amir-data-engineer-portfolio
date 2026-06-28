@@ -205,8 +205,7 @@ h1 {
   line-height: 0.98;
 }
 
-.heroActions,
-.contactLinks {
+.heroActions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -393,7 +392,6 @@ h1 {
 .timelineItem,
 .project,
 .educationCard,
-.contactForm,
 .footer {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -454,8 +452,7 @@ h1 {
 }
 
 .aboutSection,
-.stackSection,
-.contactSection {
+.stackSection {
   display: grid;
   grid-template-columns: minmax(260px, 0.54fr) minmax(0, 1fr);
   gap: clamp(28px, 6vw, 84px);
@@ -815,89 +812,9 @@ h1 {
   line-height: 1.5;
 }
 
-.contactSection {
-  padding-bottom: clamp(64px, 8vw, 104px);
-}
-
-.contactIntro {
-  max-width: 620px;
-}
-
-.contactIntro p {
-  margin-top: 16px;
-}
-
-.contactLinks {
-  margin-top: 24px;
-}
-
-.contactLinks a {
-  display: inline-flex;
-  min-height: 42px;
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-  padding: 0 13px;
-  color: var(--navy);
-  font-weight: 850;
-}
-
-.contactForm {
-  display: grid;
-  gap: 14px;
-  padding: clamp(20px, 4vw, 32px);
-}
-
-.contactForm label {
-  display: grid;
-  gap: 8px;
-  color: var(--ink);
-  font-size: 0.86rem;
-  font-weight: 850;
-}
-
-.contactForm input,
-.contactForm textarea {
-  width: 100%;
-  min-height: 48px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fbfdff;
-  color: var(--ink);
-  font: inherit;
-  padding: 12px 14px;
-  outline-color: var(--teal);
-}
-
-.contactForm textarea {
-  resize: vertical;
-}
-
-.contactForm button {
-  min-height: 50px;
-  border: 0;
-  border-radius: 8px;
-  background: var(--navy);
-  color: #fff;
-  cursor: pointer;
-  font: inherit;
-  font-weight: 850;
-}
-
-.contactForm button:hover {
-  background: var(--teal);
-}
-
-.formStatus {
-  min-height: 24px;
-  margin: 0;
-  color: var(--teal) !important;
-  font-size: 0.95rem !important;
-}
-
 .footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 18px;
   width: min(1180px, calc(100% - 36px));
@@ -908,13 +825,6 @@ h1 {
 
 .footer p {
   margin: 0;
-}
-
-.footer div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  justify-content: flex-end;
 }
 
 .footer a {
@@ -928,7 +838,6 @@ h1 {
   .notesSection,
   .stackSection,
   .education,
-  .contactSection,
   .sectionHeader,
   .timelineItem {
     grid-template-columns: 1fr;
@@ -985,7 +894,6 @@ h1 {
 
   .heroActions,
   .heroRole,
-  .contactLinks,
   .aboutCards {
     display: grid;
     grid-template-columns: 1fr;
@@ -1027,8 +935,7 @@ h1 {
     height: 58px;
   }
 
-  .footer,
-  .footer div {
+  .footer {
     flex-direction: column;
     justify-content: flex-start;
   }

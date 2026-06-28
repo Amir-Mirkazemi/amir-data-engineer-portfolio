@@ -1,5 +1,3 @@
-import ContactForm from "./ContactForm";
-
 const metrics = [
   { value: "20+", label: "Snowflake ingestion pipelines" },
   { value: "~40%", label: "less manual validation effort" },
@@ -94,8 +92,8 @@ const notes = [
     detail:
       "Patterns I care about when building scheduled workflows: idempotent tasks, clear dependencies, and readable failure points.",
     href: "https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html",
-    image: "/portfolio-images/ref-airflow.jpg",
-    imageAlt: "Server rack infrastructure for Airflow workflow reliability",
+    image: "/portfolio-images/ref-airflow-dag.svg",
+    imageAlt: "Airflow DAG workflow graph with orchestration dependencies",
   },
   {
     title: "Snowflake pipelines",
@@ -142,9 +140,8 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#projects">Projects</a>
-          <a href="#notes">Notes</a>
+          <a href="#notes">References</a>
           <a href="#stack">Stack</a>
-          <a href="#contact">Contact</a>
         </nav>
       </header>
 
@@ -152,9 +149,9 @@ export default function Home() {
         <div className="heroCopy">
           <p className="eyebrow">Data Engineer Portfolio</p>
           <h1>Amir Mirkazemi</h1>
-          <div className="heroActions" aria-label="Contact links">
-            <a className="primaryAction" href="#contact">
-              Contact me
+          <div className="heroActions" aria-label="Primary actions">
+            <a className="primaryAction" href="mailto:amirkazemi@ucsd.edu">
+              Email me
             </a>
             <a className="secondaryAction" href="#work">
               View work
@@ -275,9 +272,6 @@ export default function Home() {
                 <a href={project.href} rel="noreferrer" target="_blank">
                   {project.linkLabel}
                 </a>
-                <a href="https://www.linkedin.com/in/amir-mirkazemi/" rel="noreferrer" target="_blank">
-                  LinkedIn
-                </a>
               </div>
             </article>
           ))}
@@ -338,37 +332,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section contactSection" id="contact">
-        <div className="contactIntro">
-          <h2>Contact me</h2>
-          <p>
-            Share your name, email, and message. The form prepares an email to my UCSD address with
-            your details.
-          </p>
-          <div className="contactLinks" aria-label="Amir contact information">
-            <a href="mailto:amirkazemi@ucsd.edu">amirkazemi@ucsd.edu</a>
-            <a href="https://www.linkedin.com/in/amir-mirkazemi/" rel="noreferrer" target="_blank">
-              LinkedIn
-            </a>
-            <a href="https://github.com/amir-mirkazemi" rel="noreferrer" target="_blank">
-              GitHub
-            </a>
-          </div>
-        </div>
-        <ContactForm />
-      </section>
-
       <footer className="footer">
         <p>Las Vegas, NV</p>
-        <div>
-          <a href="mailto:amirkazemi@ucsd.edu">amirkazemi@ucsd.edu</a>
-          <a href="https://www.linkedin.com/in/amir-mirkazemi/" rel="noreferrer" target="_blank">
-            LinkedIn
-          </a>
-          <a href="https://github.com/amir-mirkazemi" rel="noreferrer" target="_blank">
-            GitHub
-          </a>
-        </div>
+        <a href="#top">Back to top</a>
       </footer>
     </main>
   );
