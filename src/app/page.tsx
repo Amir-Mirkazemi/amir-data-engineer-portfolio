@@ -333,7 +333,6 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <p>Las Vegas, NV</p>
         <a href="#top">Back to top</a>
       </footer>
     </main>

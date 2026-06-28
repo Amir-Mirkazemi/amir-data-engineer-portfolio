@@ -815,16 +815,12 @@ h1 {
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 18px;
   width: min(1180px, calc(100% - 36px));
   margin: 0 auto 32px;
   padding: 24px;
   color: var(--muted);
-}
-
-.footer p {
-  margin: 0;
 }
 
 .footer a {
