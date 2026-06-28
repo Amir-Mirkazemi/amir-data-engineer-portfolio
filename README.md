@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amir Mirkazemi | Data Engineer Portfolio
 
-## Getting Started
+Personal portfolio for Amir Mirkazemi, a data engineer focused on Snowflake ingestion, Apache Airflow workflows, SQL validation, audit tables, and reporting-ready datasets.
 
-First, run the development server:
+Live site: [amirdata.com](https://amirdata.com)
+
+## Overview
+
+This portfolio is designed for data engineering job applications. It highlights production data work, technical projects, engineering references, education, and direct contact links in a clean recruiter-friendly format.
+
+## Featured Sections
+
+- **Data engineering workspace**: Visual summary of Snowflake ingestion, Airflow DAGs, and SQL validation.
+- **Experience**: Data engineering, data analysis, and enterprise IT support roles.
+- **Projects**: Data-focused projects including ETL, database design, and application persistence.
+- **Engineering references**: Curated resources around Airflow, Snowflake, and analytics engineering.
+- **Technical stack**: Python, SQL, Snowflake, Airflow, databases, AWS, Power BI, Tableau, and GitLab.
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- CSS Modules via global app styling
+- Vercel deployment
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run typecheck
+npm run build
+```
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Portfolio: [amirdata.com](https://amirdata.com)
+- LinkedIn: [linkedin.com/in/amir-mirkazemi](https://www.linkedin.com/in/amir-mirkazemi/)
+- GitHub: [github.com/amir-mirkazemi](https://github.com/amir-mirkazemi)
