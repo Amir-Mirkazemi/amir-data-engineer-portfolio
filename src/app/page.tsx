@@ -1,16 +1,18 @@
 const metrics = [
   { value: "20+", label: "Snowflake ingestion pipelines" },
-  { value: "~40%", label: "less manual validation effort" },
-  { value: "4.0", label: "current UCSD MS Data Science GPA" },
+  { value: "~40%", label: "fewer manual validation tickets" },
+  { value: "4.0", label: "UCSD MS Data Science GPA" },
 ];
 
 const systems = [
   "Snowflake",
   "Airflow",
   "Python",
-  "SQL validation",
-  "Oracle",
-  "Power BI",
+  "PySpark",
+  "Trino",
+  "Kubernetes",
+  "Great Expectations",
+  "SQL",
 ];
 
 const aboutCards = [
@@ -29,87 +31,78 @@ const experience = [
     company: "Credit One Bank",
     location: "Las Vegas, NV",
     period: "July 2025 - Present",
-    stack: "SQL, Snowflake, Python, Airflow, Oracle, DBeaver",
+    stack: "Python, SQL, Airflow, PySpark, Snowflake, Trino, Kubernetes",
     summary:
-      "Designing and maintaining metadata-driven ingestion pipelines that move legacy enterprise feeds into Snowflake with validation checks, audit tables, and dependable release controls.",
+      "Building metadata-driven Snowflake ingestion pipelines, Airflow DAG tooling, Great Expectations quality checks, and production fixes across PySpark, Trino, Kubernetes, and schema migration work.",
   },
   {
     role: "Data Analyst",
     company: "Advertising Checking Bureau",
-    location: "Remote",
+    location: "Tempe, AZ",
     period: "Sep 2023 - May 2025",
     stack: "SQL, Excel",
     summary:
-      "Analyzed and validated claims data, found discrepancies across operational datasets, and built reporting workflows that reduced repetitive manual work.",
-  },
-  {
-    role: "End User Analyst Intern",
-    company: "Freeport-McMoRan",
-    location: "Phoenix, AZ",
-    period: "May 2025 - July 2025",
-    stack: "ServiceNow, Active Directory, hardware imaging",
-    summary:
-      "Supported enterprise IT operations across user requests, access tasks, onboarding changes, and standardized device deployment.",
+      "Validated about 120 claims daily with SQL and automated recurring Excel reporting workflows, reducing report preparation from about an hour to under 15 minutes.",
   },
 ];
 
 const projects = [
   {
-    title: "Stock Trading Web Application",
-    meta: "MySQL, Flask, Python, AWS",
-    detail:
-      "A role-aware trading application with trade execution logic, portfolio tracking, SQLAlchemy persistence, and environment-based deployment configuration.",
-    href: "https://github.com/Amir-Mirkazemi/ift401group4",
-    linkLabel: "View repository",
-    image: "/portfolio-images/project-trading.jpg",
-    imageAlt: "Market chart visualization for the stock trading web application",
-  },
-  {
     title: "Weather ETL Pipeline",
     meta: "Python, GitHub Actions, SQLite, API ingestion",
     detail:
-      "A lightweight data engineering pipeline that extracts live weather data, transforms it, and loads structured records into SQLite on an automated schedule.",
+      "An automated ETL pipeline that extracts live weather data from a public API, transforms it into typed records, and loads SQLite hourly with GitHub Actions.",
     href: "https://github.com/Amir-Mirkazemi/weather-ETL-pipeline",
     linkLabel: "View repository",
     image: "/portfolio-images/project-weather.jpg",
     imageAlt: "Cloud system visual for the weather ETL pipeline",
   },
   {
-    title: "IT Systems Development Project",
-    meta: "SQL, database design, Lucidchart",
+    title: "Metadata Generator Airflow DAG",
+    meta: "Airflow, Python, SQL metadata, Snowflake",
     detail:
-      "A scalable relational schema designed for structured storage, efficient retrieval, and dependable reporting queries.",
-    href: "https://github.com/Amir-Mirkazemi",
-    linkLabel: "View GitHub",
-    image: "/portfolio-images/project-schema.jpg",
-    imageAlt: "Circuit-board system visual for the IT database design project",
+      "A production DAG that turns structured inputs, column definitions, unique identifiers, and file-pattern regex into SQL for pipeline metadata tables.",
+    href: "https://amirdata.com/#work",
+    linkLabel: "View experience",
+    image: "/portfolio-images/ref-airflow-dag.svg",
+    imageAlt: "Airflow DAG workflow graph for metadata generation",
+  },
+  {
+    title: "Snowflake Schema Migration",
+    meta: "Snowflake, Trino SQL, schema mappings",
+    detail:
+      "Migrated 20+ feeds and tables from core- to business-facing Snowflake schemas by rebuilding SQL views, definitions, and target mappings for Marketing reporting.",
+    href: "https://amirdata.com/#work",
+    linkLabel: "View experience",
+    image: "/portfolio-images/ref-snowflake.jpg",
+    imageAlt: "Global data network visual for Snowflake schema migration",
   },
 ];
 
 const notes = [
   {
-    title: "Airflow DAG best practices",
+    title: "Airflow DAG reliability",
     detail:
-      "Patterns I care about when building scheduled workflows: idempotent tasks, clear dependencies, and readable failure points.",
+      "Patterns I use for production workflows: metadata-driven setup, idempotent tasks, clear failure points, and visible reruns.",
     href: "https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html",
     image: "/portfolio-images/ref-airflow-dag.svg",
     imageAlt: "Airflow DAG workflow graph with orchestration dependencies",
   },
   {
-    title: "Snowflake pipelines",
+    title: "Snowflake ingestion design",
     detail:
-      "Streams, tasks, audit tables, and warehouse design are the pieces I use to think about dependable ingestion.",
+      "The core pieces I care about: schemas, target mappings, validation zones, audit tables, and reporting-ready handoffs.",
     href: "https://docs.snowflake.com/en/user-guide/data-pipelines-intro",
     image: "/portfolio-images/ref-snowflake.jpg",
     imageAlt: "Global network lights for Snowflake data pipeline concepts",
   },
   {
-    title: "Analytics engineering",
+    title: "Great Expectations checks",
     detail:
-      "I like the practical bridge between raw operational data, tested transformations, and reporting-ready datasets.",
-    href: "https://docs.getdbt.com/docs/introduction",
+      "Data quality work should catch malformed files, schema drift, delimiter issues, and datatype mismatches before downstream users see them.",
+    href: "https://docs.greatexpectations.io/docs/core/introduction/",
     image: "/portfolio-images/ref-analytics.jpg",
-    imageAlt: "Analytics dashboard screen for reporting-ready datasets",
+    imageAlt: "Analytics dashboard screen for data quality checks",
   },
 ];
 
@@ -118,14 +111,18 @@ const skills = [
   "SQL",
   "Snowflake",
   "Apache Airflow",
+  "PySpark",
+  "Trino",
+  "Kubernetes",
+  "Great Expectations",
   "Oracle",
   "SQL Server",
   "PostgreSQL",
   "MySQL",
-  "AWS",
-  "Power BI",
-  "Tableau",
   "GitLab",
+  "AWS",
+  "Excel",
+  "Tableau",
 ];
 
 export default function Home() {
@@ -172,25 +169,25 @@ export default function Home() {
           </div>
           <div className="dashboardGrid">
             <div className="dashboardCard featuredCard">
-              <span>Warehouse</span>
-              <strong>Snowflake ingestion</strong>
-              <p>Validated feeds, audit tables, and reporting-ready schemas.</p>
+              <span>Automation</span>
+              <strong>Metadata generator DAG</strong>
+              <p>Turns feed inputs, column definitions, identifiers, and regex into pipeline metadata SQL.</p>
             </div>
             <div className="dashboardCard">
-              <span>Orchestration</span>
-              <strong>Airflow DAGs</strong>
-              <p>Scheduled workflows with clear handoffs and release checks.</p>
+              <span>Warehouse</span>
+              <strong>20+ Snowflake feeds</strong>
+              <p>Oracle and SSIS legacy feeds moved into business-facing schemas.</p>
             </div>
             <div className="dashboardCard">
               <span>Quality</span>
-              <strong>SQL validation</strong>
-              <p>Row counts, schema rules, and exception checks before BI.</p>
+              <strong>Great Expectations</strong>
+              <p>Column, delimiter, and datatype checks before downstream tables.</p>
             </div>
           </div>
           <div className="queryPreview" aria-label="SQL validation preview">
-            <span>validation_check.sql</span>
+            <span>metadata_load.sql</span>
             <code>
-              select feed_name, row_count, status from audit_runs where status = 'ready';
+              insert into pipeline_metadata select feed_name, column_name, target_type from generated_specs;
             </code>
           </div>
         </aside>
@@ -217,10 +214,10 @@ export default function Home() {
         </div>
         <div className="aboutBody">
           <p>
-            I am a data engineer focused on Snowflake ingestion, Python-based Airflow workflows,
-            SQL validation, audit tables, and clean handoffs to reporting teams. My background spans
-            data analysis, enterprise IT support, and production data work, so I think about both
-            the systems behind the pipeline and the people who depend on the results.
+            I am a data engineer focused on metadata-driven ingestion, Python-based Airflow DAGs,
+            Snowflake pipelines, PySpark jobs, Trino SQL views, and Great Expectations validation.
+            My work sits close to production: reducing manual setup, fixing recurring pipeline failures,
+            and making messy operational feeds reliable for reporting teams.
           </p>
           <div className="aboutCards" aria-label="Amir contact details">
             {aboutCards.map((item) => (
@@ -310,7 +307,7 @@ export default function Home() {
       <section className="section education">
         <div className="educationIntro">
           <h2>Education</h2>
-          <p>Formal data science training backed by information technology and production data work.</p>
+          <p>Graduate data science training backed by information technology fundamentals and production data engineering work.</p>
         </div>
         <div className="educationDetails">
           <article className="educationCard">
@@ -318,7 +315,7 @@ export default function Home() {
             <div>
               <h3>University of California, San Diego</h3>
               <p>Master of Science in Data Science</p>
-              <span>Expected Apr 2027 / Current GPA 4.0 / Halicioglu Data Science Scholarship</span>
+              <span>Expected Apr 2027 / GPA 4.0 / Halicioglu Data Science Scholarship</span>
             </div>
           </article>
           <article className="educationCard">
@@ -326,7 +323,7 @@ export default function Home() {
             <div>
               <h3>Arizona State University</h3>
               <p>BS Information Technology</p>
-              <span>Completed Aug 2025 / GPA 4.0</span>
+              <span>Completed Aug 2025 / GPA 4.0 / New American Scholarship / Dean's List</span>
             </div>
           </article>
         </div>
